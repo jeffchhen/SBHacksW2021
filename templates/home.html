@@ -1,7 +1,51 @@
 {% extends "layout.html" %}
 {%block content%}
-		<h1>  Hello All </h1>
-		<h1> Test Project for SBHACKS </h1>
-		
-	<button> Hi </button>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+$(function() {
+		$('a#Battleship').on('click', function(e) {
+				e.preventDefault()
+						function(data) {
+							window.alert("hello")
+						return true;
+				});
+		});
+</script>
+
+<script type=text/javascript>
+$(function() {
+	$('a#ConnectN').bind('click', function() {
+		$.getJSON('/background_test/',
+				function(data) {
+				//do nothing
+				});
+		return false;
+		});
+});
+</script>
+<script type=text/javascript>
+	$("hungergame").click(function(){
+		$.ajax({
+			type: 'GET',
+			url: "/hungergames/",
+			success: function(){
+			alert("Sent to Battleship");
+			}	
+		});
+	});
+}
+</script>
+<h1>  Hello All </h1>
+<h1> Test Project for SBHACKS </h1>
+<h1> Click the Game you'd like to play 	
+
+<form method="get" action="/connectN">
+    <button type="submit">Connect N </button>
+    </form>
+<form method="get" action="/battleship">
+    <button type="submit">Battleship </button>
+    </form>
+<form method="get" action="/hungergames">
+    <button type="submit">Hungergames</button>
+    </form>
 {%endblock content%}
