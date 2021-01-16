@@ -16,6 +16,10 @@ def background_test():
 	print("yah");
 	return("nothing");
 
+@app.route("/connect4/<value>/")
+def connect4_home(value):
+	print("test Connect 4 page");
+	return render_template('connect4.html')
 if __name__ == '__main__':
 	
 	app.run(debug=True)
