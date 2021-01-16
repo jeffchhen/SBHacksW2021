@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.route('/')
 def yah():
 	print("yah");
-	return render_template('test.html')
+	return render_template('home.html')
 
 
 @app.route('/insert-one/<name>/<id>/', methods=['GET'])
