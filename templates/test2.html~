@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{%block content%}
+<div id=update></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+$(function() {
+		$('a#test').bind('click', function() {
+			$.getJSON('/Send_to_Db',
+				function(data) {
+					//do nothing
+						});
+				return false;
+				});
+});
+</script>
+<div id=checktwoweeks> </div>
+<script type=text/javascript>
+// run this function every day 
+	window.setInterval(function(){
+		$("#checktwoweeks").load("/check_two_weeks", function() {});
+	}, 86400000);
+	
+</script>
+<script type=text/javascript>
+// run every two hours 
+	window.setInterval(function(){
+		$("#update").load("/pulldata", function() {});
+	}, 7200000);
+	
+</script>
+
+<div id="accesspoint"></div>
+<script type=text/javascript>
+// run every 15 minutes 900000
+	window.setInterval(function(){
+		$("#accesspoint").load("/access_points", function(){});
+	}, 18000);
+	
+
+</script>
+<div class='container'>
+	<h3>Test</h3>
+	<form>
+		<a href=# id=test><button class='btn btn-default'>Send Data</button></a>
+	</form>
+	<h1> 2Test3 </h1>
+	
+</div>
+{%endblock content%}

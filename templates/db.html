@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{%block content%}
+<div id=update> </div> 
+<div id=accesspoints> </div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+
+$(function() {
+	$('a#test').bind('click', function() {
+		$.getJSON('/Send_to_Db',
+			function(data) {
+				//do nothing
+					});
+			return false;
+	});
+});
+window.setInterval(function(){
+	$("#update").load("/pulldata")function(){
+		//do nothing	
+	}
+}, 10000);
+
+window.setInterval(function(){
+	$("#accesspoints").load("/access_points"}function(){alert('hello');});
+}, 5000);
+//$(document).ready(function() {
+//	setInterval(pulldata(), 1000);
+//	});
+//function pulldata(){
+//	$("#update").load("/pulldata", function() {alert("hah")});
+//}
+</script>
+<div class='container'>
+	<h3>Test</h3>
+	<form>
+		<a href=# id=test><button class='btn btn-default'>Test</button></a>
+	</form>
+	<h1>Hi </h1>
+
+</div>
+{%endblock content%}
