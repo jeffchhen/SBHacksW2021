@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{%block content%}
+	{% for post in posts %}
+		<h1> {{post.time }} </h1>
+		<h1> {{post.bssid}} </h1>
+	{% endfor %}
+	<button> Hi </button>
+{%endblock content%}

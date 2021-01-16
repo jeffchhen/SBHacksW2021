@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{%block content%}
+<div id=update></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+$(function() {
+		$('a#test').bind('click', function() {
+			$.getJSON('/Send_to_Db',
+				function(data) {
+					//do nothing
+						});
+				return false;
+				});
+});
+</script>
+<div id=checktwoweeks> </div>
+<script type=text/javascript>
+// run this function every day 86400000. This runs every two weeks and is suppose to remove all old entries in the database  
+	window.setInterval(function(){
+		$("#checktwoweeks").load("/check_two_weeks", function() {});
+	}, 86400000);
+	
+</script>
+<script type=text/javascript>
+// run every two hours. This runs the pulldata every 2 hours. 
+	window.setInterval(function(){
+		$("#update").load("/pulldata", function() {});
+	}, 7200000);
+	
+</script>
+
+<div id="accesspoint"></div>
+<script type=text/javascript>
+// run every 15 minutes 900000. This runs the /access_points method and returns a BSSID signal 
+	window.setInterval(function(){
+		$("#accesspoint").load("/access_points", function(){});
+	}, 18000);
+	
+
+</script>
+<!-- Runs the frontend of the porject --> 
+<div class='container'>
+	<h3>Home</h3> 
+	<form> 
+		<a href=# id=test><button class='btn btn-default'>Send Data</button></a>
+	</form>
+	<li> Checks Access Points every 15 minutes </li>
+	<li> Pulls data from db every 2 hours </li> 
+	<li> Checks Date every day </li>
+	
+</div>
+{%endblock content%}
