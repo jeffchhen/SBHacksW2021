@@ -26,9 +26,8 @@ def test():
 def process():
 	email = request.form['email']
 	name = request.form['name']
-	if name:
+	if name and email:
 		newName = name[::-1]
-		newName = "Hah"
 		return jsonify({'name' : newName})
 	return jsonify({'error' : 'Missing data!'})
 @app.route("/battleship/")
