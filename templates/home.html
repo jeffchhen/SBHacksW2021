@@ -35,18 +35,64 @@ $(function() {
 		});
 	});
 }
-</script>
-<h1>  Hello All12 </h1>
-<h1> Test Project for SBHACKS </h1>
-<h1> Click the Game you'd like to play 	
-<button a href=# id=ConnectN> Test Button </button>
-<form method="get" action="/connectN">
-    <button type="submit">Connect N </button>
-    </form>
-<form method="get" action="/battleship">
-    <button type="submit">Battleship </button>
-    </form>
-<form method="get" action="/hungergames">
-    <button type="submit">Hungergames</button>
-    </form>
+</style>
+
+<div class="myDiv">
+    <h1> Hello All </h1>
+    <h1> Test Project for SBHACKS </h1>
+    <h1> Choose the Game you'd like to play </h1>
+</div>
+
+<style>
+.row {
+  display: flex;
+}
+</style>
+
+<style>
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
+
+<style>
+.button {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
+
+<div class = "row">
+    <div class="column">
+        <form method="get" action="/connectN">
+            <img src="https://jpg.hoodamath.com/large/connect4_300x225.jpg" width="100%" height = "400">
+            <br>
+            <button class = "button" type="submit">Connect N</button>
+        </form>
+    </div>
+
+    <div class="column">
+        <form method="get" action="/battleship">
+            <img src="https://dpanoply.s3.amazonaws.com/blog/battleship-text-effect-using-layer-styles/21.jpg" width="100%" height = "400">
+            <br>
+            <button class = "button" type="submit">Battleship</button>
+        </form>
+    </div>
+
+    <div class = "column">
+        <form method="get" action="/hungergames">
+            <img src="https://www.mhsroundtable.com/wp-content/uploads/2016/12/the-hunger-games.png" width="100%" height = "400">
+            <br>
+            <button class = "button" type="submit">Hunger Games</button>
+        </form>
+    </div>
+</div>
+
 {%endblock content%}
