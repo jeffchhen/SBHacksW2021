@@ -1,4 +1,4 @@
-# SBHacksW2021
+# Easy as Py
 SB Hacks Arden Raj Michael Jeff
 
 Tried to build a website where users could choose what game to play, and we created four games in Python: ConnectN, TicTacToe, Hunger Games, and Battleship.
