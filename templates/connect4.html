@@ -1,10 +1,39 @@
 {% extends "layout.html" %}
 {%block content%}
+<div id=update></div> 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+function doStuff(){
+	var value = $('#rownumber').val();
+	$.ajax({
+		  type: 'POST',
+		  url: "/",
+		  data: JSON.stringify(value),
+		  contentType: 'application/json',
+		  success: function(){
+			  alert("you did this");
+		}
+	});
+
+});
+</script>
+<div id=buttonpress></div>
+<script type=text/javascript>
+
+$("#checkUsername").on("click", function() {
+    alert("hi");
+    doStuff();
+}
+</script>
+<div id=container>
 		<h1>  Hello All </h1>
 		<h1> Test Project for SBHACKS </h1>
 		<label for="rowname" style="color:blue"> Enter Row Number here  <br><br>
-		<input type="text" id ="rownumber" name="rowname">
+		<input class="textbox" type="text" id ="rownumber" name="rowname">
+		<button id="checkUsername">Check username</button>
+
 		<input type="submit" value="Submit"> 
 		
-	<button> Send Move  </button>
+	<button> Send Move  i</button>
+	</div>
 {%endblock content%}

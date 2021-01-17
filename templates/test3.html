@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{%block content%}
+<div id=update></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type=text/javascript>
+/*$(function() {
+		$('a#test').bind('click', function() {
+				$.getJSON('/connectN',
+						function(data) {
+						//do nothing
+						});
+				return true;
+				});
+		});*/
+	$('a#test').click(function(){
+		$.ajax({
+			type: 'GET',
+			url: "/hungergames/",
+			success: function(){
+			alert("Sent to Battleship");
+			}	
+		});
+	});
+</script>
+
+<!-- Runs the frontend of the porject --> 
+<div class='container'>
+	<h3>Home</h3> 
+	<h1>  Hello All </h1>
+	<h1> Test Project for SBHACKS </h1>
+	<h1> Click the Game you'd like to play 	
+	<button a href=# id=ConnectN> Test Button </button>
+	<form method="get" action="/connectN">
+		<button type="submit">Connect N </button>
+	</form>
+	<form method="get" action="/battleship">
+	<button type="submit">Battleship </button>
+	</form>
+	<form method="get" action="/hungergames">
+	<button type="submit">Hungergames</button>
+	</form>
+	<form> 
+	<a href=# id=test><button class='btn btn-default'>Send Data</button></a>
+	</form>
+	<li> s Checks Access Points every 1i5 minutes </li>
+	<li> Pulls data from db every 2 hours </li> 
+	<li> Checks Date every day </li>
+
+</div>
+{%endblock content%}

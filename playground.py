@@ -3,7 +3,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 @app.route('/')
 def yah():
-	return render_template('home.html')
+	return render_template('test3.html')
 
 
 @app.route('/insert-one/<name>/<id>/', methods=['GET'])
@@ -17,9 +17,20 @@ def background_test():
 
 @app.route("/connectN/")
 def connect4_home():
-
 	print("test Connect 4 page");
 	return render_template('connect4.html')
+@app.route('/test')
+def test():
+	return render_template('yoinkedfromGH.html')
+@app.route('/process', methods=['POST'])
+def process():
+	email = request.form['email']
+	name = request.form['name']
+	if name:
+		newName = name[::-1]
+		newName = "Hah"
+		return jsonify({'name' : newName})
+	return jsonify({'error' : 'Missing data!'})
 @app.route("/battleship/")
 def battleship():
 	return render_template('battleship.html')
