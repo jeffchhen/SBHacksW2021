@@ -2,9 +2,8 @@ from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 app = Flask(__name__)
 @app.route('/')
-#hi
 def yah():
-	return render_template('test3.html')
+	return render_template('home.html')
 
 
 @app.route('/insert-one/<name>/<id>/', methods=['GET'])
